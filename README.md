@@ -6,6 +6,8 @@ This repository contains the solutions for Questions 5 and 6 from the Web Develo
 The project includes complete and well-documented answers for both questions, covering practical implementation using HTML, CSS, and JavaScript.
 
 ## Contents
+[4g3V6aIec2XNMBW0Rb2YvnIJpuOPBVBXoCc8DxLk.pdf](https://github.com/user-attachments/files/23108829/4g3V6aIec2XNMBW0Rb2YvnIJpuOPBVBXoCc8DxLk.pdf)
+
 - Q5/ → Solution for Question 5  
 - Q6/ → Solution for Question 6  
 
