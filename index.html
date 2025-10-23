@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 5 + 6 </title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+    /* Gray Dark Theme Variables */
+    :root {
+        --bg-primary: #1f2937;
+        --bg-secondary: #374151;
+        --bg-hover: #4b5563;
+        --accent-primary: #6b7280;
+        --accent-secondary: #9ca3af;
+        --accent-hover: #d1d5db;
+        --text-primary: #f3f4f6;
+        --text-secondary: #e5e7eb;
+        --border-color: #4b5563;
+        --card-bg: #2c3544;
+        --input-bg: #374151;
+    }
+
+    body {
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        background: linear-gradient(145deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        color: var(--text-primary);
+        line-height: 1.5;
+    }
+
+    .profile-card {
+        background: var(--card-bg);
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        margin: 30px auto;
+        max-width: 920px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        border-color: var(--accent-primary);
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid var(--accent-primary);
+        box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.05);
+        border-color: var(--accent-hover);
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .profile-video {
+        width: 100%;
+        max-width: 480px;
+        border-radius: 12px;
+        border: 2px solid var(--border-color);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+        background: var(--input-bg);
+    }
+
+    .profile-video:hover {
+        transform: scale(1.02);
+        border-color: var(--accent-primary);
+        box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+    }
+
+    .github-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--text-primary);
+        background: var(--bg-secondary);
+        padding: 8px 16px;
+        border-radius: 20px;
+        margin: 10px 0;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+        font-size: 16px;
+        gap: 8px;
+    }
+
+    .github-link:hover {
+        transform: translateY(-2px);
+        background: var(--bg-hover);
+        border-color: var(--accent-primary);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .github-link i {
+        font-size: 20px;
+    }
+
+    .internal-style {
+        background: var(--bg-secondary);
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 20px;
+        border-radius: 8px;
+        color: var(--text-primary);
+        transition: all 0.2s ease;
+    }
+
+    .internal-style:hover {
+        transform: translateY(-2px);
+        background: var(--bg-hover);
+        border-color: var(--accent-primary);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    /* Modern Bass-style audio player */
+    .audio-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+    }
+    .modern-audio {
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 32px;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modern-audio:hover {
+        transform: translateY(-4px);
+        border-color: var(--accent-primary);
+        background: var(--bg-hover);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .modern-audio audio {
+        width: 320px;
+        outline: none;
+        border-radius: 8px;
+        opacity: 0.9;
+        transition: all 0.2s ease;
+    }
+
+    .modern-audio audio:hover {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+
+    .modern-audio h2 {
+        color: var(--text-primary);
+        margin-bottom: 24px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .modern-audio audio {
+        width: 320px;
+        outline: none;
+        filter: drop-shadow(0 5px 15px rgba(56, 189, 248, 0.2));
+        transition: all 0.3s ease;
+        opacity: 0.9;
+    }
+    
+    .modern-audio audio:hover {
+        transform: scale(1.02);
+        opacity: 1;
+    }
+    
+    .modern-audio h2 {
+        color: var(--text-primary);
+        margin-bottom: 20px;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background: linear-gradient(to right, var(--text-primary), var(--accent-primary));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .modern-audio h2:hover {
+        letter-spacing: 3px;
+        text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+    }
+
+    /* Reactive circle styles */
+    .reactive-circle-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+    canvas#reactiveCircle {
+        background: transparent;
+        display: block;
+    }
+</style>
+<body>
+
+
+    <div class="audio-container">
+        <div class="modern-audio">
+            <h2>بحبك في الله يا دكتور</h2>
+            <div class="reactive-circle-container">
+                <canvas id="reactiveCircle" width="120" height="120"></canvas>
+            </div>
+            <audio id="mainAudio" controls>
+                <source src="speech.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Inline CSS -->
+    <div style="background-color: #e1bee7; padding: 16px; border: 2px solid #6a1b9a; margin-bottom: 16px;">
+        <p>This div is styled with <strong>inline CSS</strong>.</p>
+    </div>
+
+    <!-- Internal CSS -->
+    <div class="internal-style">
+        <p>This div is styled with <strong>internal CSS</strong> (in the &lt;style&gt; tag).</p>
+    </div>
+
+    <!-- External CSS -->
+    <div class="external-style">
+        <p>This div is styled with <strong>external CSS</strong> (in styles.css).</p>
+    </div>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+    // Reactive circle animation based on audio volume
+    const audio = document.getElementById('mainAudio');
+    const canvas = document.getElementById('reactiveCircle');
+    const ctx = canvas.getContext('2d');
+    let audioContext, analyser, source, dataArray, animationId;
+
+    function drawCircle(volume) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+        const minRadius = 30;
+        const maxRadius = 55;
+        const radius = minRadius + (maxRadius - minRadius) * volume;
+        
+        // Draw outer glow
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius + 5, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.1)';
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 25;
+        ctx.fill();
+        
+        // Draw main circle
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(56, 189, 248, 0.7)';
+        ctx.shadowColor = '#38bdf8';
+        ctx.shadowBlur = 15;
+        ctx.fill();
+        
+        // Draw inner circle
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius * 0.7, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(129, 140, 248, 0.5)';
+        ctx.shadowColor = '#818cf8';
+        ctx.shadowBlur = 10;
+        ctx.fill();
+        
+        ctx.shadowBlur = 0;
+    }
+
+    function animate() {
+        analyser.getByteTimeDomainData(dataArray);
+        // Calculate normalized volume (0-1)
+        let sum = 0;
+        for (let i = 0; i < dataArray.length; i++) {
+            let val = (dataArray[i] - 128) / 128;
+            sum += val * val;
+        }
+        let rms = Math.sqrt(sum / dataArray.length);
+        drawCircle(rms);
+        animationId = requestAnimationFrame(animate);
+    }
+
+    function setupAudioContext() {
+        if (audioContext) return;
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        source = audioContext.createMediaElementSource(audio);
+        analyser = audioContext.createAnalyser();
+        analyser.fftSize = 256;
+        dataArray = new Uint8Array(analyser.fftSize);
+        source.connect(analyser);
+        analyser.connect(audioContext.destination);
+    }
+
+    audio.addEventListener('play', () => {
+        setupAudioContext();
+        animate();
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+    });
+    audio.addEventListener('pause', () => {
+        cancelAnimationFrame(animationId);
+    });
+    audio.addEventListener('ended', () => {
+        cancelAnimationFrame(animationId);
+        drawCircle(0);
+    });
+    // Draw initial circle
+    drawCircle(0);
+    </script>
+
+    <!-- Profile card (owner) -->
+    <div class="profile-card">
+        <img src="profile.jpg" alt="Profile" class="profile-img">
+        <div class="profile-info">
+            <h3>A R S I N E K</h3>
+            <a href="https://github.com/kl0l69" target="_blank" class="github-link">
+                <i class="fab fa-github"></i>
+                <span>Follow me on GitHub</span>
+            </a>
+            <video controls class="profile-video" poster="2.jpg">
+                <source src="HI.mp4" type="video/mp4">
+                المتصفح لا يدعم عرض الفيديو.
+            </video>
+        </div>
+    </div>
+</body>
